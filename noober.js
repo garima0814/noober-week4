@@ -18,35 +18,30 @@ async function pageLoaded() {
 
   for (let i=0; i<rides.length; i++) { 
 
-   let ride = rides[i]
+  let ride = rides[i]
 
-   let levelOfService
-   let borderclass
+  let levelOfService
+  let borderclass
 
-        if (ride.length > 1) {
-          levelOfService = 'Noober Pool'
-          borderclass = "border-grey-500"
+   if (ride.length > 1) {
+    levelOfService = 'Noober Pool'
+    borderclass = "border-grey-500"
 
-
-        } else if (ride[0].purpleRequested) {
-          levelOfService = 'Noober Purple'
-          borderclass = "border-purple-500"
-
-
-        } else if (ride[0].numberOfPassengers > 3) {
-          levelOfService = 'Noober XL'
-          borderclass = "border-grey-500"
-        } else {
-          levelOfService = 'Noober X'
-          borderclass = "border-grey-500"
-        }
-
-             
-   
-        console.log(levelOfService)
+   } else if (ride[0].purpleRequested) {
+   levelOfService = 'Noober Purple'
+    borderclass = "border-purple-500"
 
 
+   } else if (ride[0].numberOfPassengers > 3) {
+    levelOfService = 'Noober XL'
+    borderclass = "border-grey-500"
+   } else {
+    levelOfService = 'Noober X'
+    borderclass = "border-grey-500"
+   }
 
+  console.log(levelOfService)
+  
        outputElement.insertAdjacentHTML('beforeend', `<h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
         <i class="fas fa-car-side"></i>
         <span>${levelOfService}</span>
@@ -90,18 +85,7 @@ async function pageLoaded() {
         `)
 
 
-        
-
-
-
-
        }
-
-
-
-
-
-
 
 }
  
